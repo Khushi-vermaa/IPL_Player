@@ -1,0 +1,25 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+model Player {
+  id      String @id @default(uuid())
+  name    String
+  team    String
+  country String
+  runs    Int
+  image   String
+  role    Role
+  salary  Int
+}
+
+enum Role {
+  Batsman
+  Bowler
+  Allrounder
+}
