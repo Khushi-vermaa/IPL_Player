@@ -115,4 +115,8 @@ export const getplayerDescription = catchAsync(async (req, res, next) => {
       salary: true,
     },
   });
+  res.status(200).json({
+    message: " players fetched successfully",
+    player,
+  });
 });
